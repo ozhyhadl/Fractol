@@ -6,7 +6,7 @@
 /*   By: ozhyhadl <ozhyhadl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 20:56:28 by ozhyhadl          #+#    #+#             */
-/*   Updated: 2019/03/21 08:20:50 by ozhyhadl         ###   ########.fr       */
+/*   Updated: 2019/03/21 10:46:57 by ozhyhadl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,18 @@ int		check(int argc, char **argv)
 {
 	int i;
 
-	i = 1;
+	i = 0;
 	if (argc < 2)
 	{
 		error_check();
 		return (0);
 	}
-	while (i < argc)
-	{
+	while (++i < argc)
 		if (ft_atoi(argv[i]) < 1 || ft_atoi(argv[i]) > 5)
 		{
 			error_check();
 			return (0);
 		}
-		i++;
-	}
 	return (1);
 }
 
@@ -49,15 +46,15 @@ void	ft_space(int argc, char **argv)
 	while (++i < argc)
 	{
 		if (ft_atoi(argv[i]) == 1)
-			system("./a.out 1&");
+			system("./fractol 1&");
 		if (ft_atoi(argv[i]) == 2)
-			system("./a.out 2&");
+			system("./fractol 2&");
 		if (ft_atoi(argv[i]) == 3)
-			system("./a.out 3&");
+			system("./fractol 3&");
 		if (ft_atoi(argv[i]) == 4)
-			system("./a.out 4&");
+			system("./fractol 4&");
 		if (ft_atoi(argv[i]) == 5)
-			system("./a.out 5&");
+			system("./fractol 5&");
 	}
 }
 

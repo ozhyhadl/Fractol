@@ -6,7 +6,7 @@
 /*   By: ozhyhadl <ozhyhadl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 21:00:29 by ozhyhadl          #+#    #+#             */
-/*   Updated: 2019/03/21 08:03:23 by ozhyhadl         ###   ########.fr       */
+/*   Updated: 2019/03/21 11:25:12 by ozhyhadl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct	s_win
 	int			lock_key;
 	int			help_wi;
 	int			first;
+	char		*iter;
 }				t_win;
 
 typedef struct	s_frac

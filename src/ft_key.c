@@ -6,7 +6,7 @@
 /*   By: ozhyhadl <ozhyhadl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 20:05:36 by ozhyhadl          #+#    #+#             */
-/*   Updated: 2019/03/21 08:20:46 by ozhyhadl         ###   ########.fr       */
+/*   Updated: 2019/03/21 11:17:12 by ozhyhadl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,12 @@ void	color_key(t_frac *f)
 	else if (i == 1)
 		f->color = 00010000;
 	else if (i == 2)
-		f->color = 16777215;
+		f->color = 263168;
 	else if (i == 3)
 		f->color = 001002004;
 	else if (i == 4)
-		f->color = 100000000;
-	else if (i == 5)
-		f->color = 001001202;
-	else if (i == 6)
 		f->color = 003000010;
-	if (i++ > 5)
+	if (i++ > 3)
 		i = 0;
 }
 
@@ -78,7 +74,7 @@ int		key_mose_d(int key, int x, int y, t_all *a)
 		p_n = (key == 5 ? 1.1 : 0.9);
 		if (key == 4 && a->frac.iteration > 5)
 			a->frac.iteration--;
-		else if (key == 5 && a->frac.iteration < 500)
+		else if (key == 5 && a->frac.iteration < 500 && a->frac.ma_re < 5)
 			a->frac.iteration++;
 		y = H_W - y;
 		mouse_re = (double)x / (H_W / (a->frac.ma_re - \
@@ -98,10 +94,10 @@ int		key_mose_d(int key, int x, int y, t_all *a)
 
 int		key_mouse_move(int x, int y, t_all *a)
 {
-	if ((x > 0 && x < H_W && y > 0 && y < H_W) && a->win->lock_key == 0)
+	if (a->win->lock_key == 0)
 	{
-		a->frac.ss_re = (x * 0.006) / 2;
-		a->frac.ss_im = (x * 0.006) / 2;
+		a->frac.ss_re = (x * 2);
+		a->frac.ss_im = (y * 2 - 1000);
 		ft_tread(*a);
 	}
 	return (0);

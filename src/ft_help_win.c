@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hepl_win.c                                      :+:      :+:    :+:   */
+/*   ft_help_win.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozhyhadl <ozhyhadl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 02:46:55 by ozhyhadl          #+#    #+#             */
-/*   Updated: 2019/03/21 08:20:38 by ozhyhadl         ###   ########.fr       */
+/*   Updated: 2019/03/21 11:25:50 by ozhyhadl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ int		ft_creat_h_w(t_all *a)
 	mlx_string_put(a->help->ptr, a->help->win, 60, 150, W_TE, "DANGER");
 	mlx_string_put(a->help->ptr, a->help->win, 30, 180, W_TE, \
 					"LSD(random) = L");
+	mlx_string_put(a->help->ptr, a->help->win, 30, 350, W_TE, "Iteration: ");
+	mlx_string_put(a->help->ptr, a->help->win, 150, 350, W_TE, \
+					a->win->iter = ft_itoa(a->frac.iteration));
+	free(a->win->iter);
 	mlx_hook(a->help->win, 2, 5, k_help_close, a->help);
 	mlx_hook(a->help->win, 3, 5, k_help_close_i, a->help);
 	mlx_hook(a->help->win, 17, 5, k_help_close_x, a->help);

@@ -6,7 +6,7 @@
 /*   By: ozhyhadl <ozhyhadl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 06:35:44 by ozhyhadl          #+#    #+#             */
-/*   Updated: 2019/03/21 08:20:35 by ozhyhadl         ###   ########.fr       */
+/*   Updated: 2019/03/21 10:59:45 by ozhyhadl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ double	ft_malder(t_frac *f, double q_im)
 
 double	ft_julia(t_frac *f, double q_im)
 {
-	q_im = 2 * f->q_re * q_im + f->ss_im;
-	f->q_re = f->q_re2 - f->q_im2 + f->ss_re;
+	q_im = 2 * f->q_re * q_im + f->ss_im / H_W;
+	f->q_re = f->q_re2 - f->q_im2 + f->ss_re / H_W;
 	return (q_im);
 }
 
